@@ -1,3 +1,6 @@
-# Good Times
+# Things to Do
 
-This is a show about a family in Chicago..
+- Create index page
+- Upload sites/screenshots
+- Create/upload logo
+- Create landing page with links
