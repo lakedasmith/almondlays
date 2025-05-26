@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falling Away From Me x Korn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f4f4f4;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+
+
+/*resposive & bootstrap*/
+
+
+    /* Default styles for larger screens */
+.hero h1 {
+  font-size: 3rem;
+}
+
+/* Styles for tablets and below */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+}
+
+/* Styles for small screens (mobile phones) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+</style>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to Our Website</h1>
+      <p>Your solution to everything!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Company Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
