@@ -6,6 +6,88 @@
   <title>Responsive Navigation</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;  /* This makes sure content is spaced between */
+  align-items: center;
+}
+
+nav .menu-toggle {
+  display: none; /* Hide hamburger menu by default */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute; /* Absolutely position the hamburger icon */
+  right: 1rem; /* Position it 1rem from the right edge */
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav .nav-links li {
+  margin: 0 15px;
+}
+
+nav .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none; /* Hide the links by default on small screens */
+    flex-direction: column; /* Stack the links vertically */
+    width: 100%; /* Make sure it spans the full width */
+    background-color: #333; /* Same background color as header */
+    position: absolute; /* Position the nav links absolutely */
+    top: 60px; /* Position the menu just below the header */
+    left: 0; /* Align it to the left side */
+  }
+
+  nav .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  nav .menu-toggle {
+    display: block; /* Show the hamburger menu button on small screens */
+  }
+
+  nav .nav-links.active {
+    display: flex; /* Show the links when 'active' class is added */
+  }
+}
+
+    
+  </style>
 <body>
   <header>
     <nav>
