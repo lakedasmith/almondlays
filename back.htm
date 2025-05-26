@@ -47,10 +47,7 @@ nav ul li a {
 .honey {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #aaa;
-  font-family: trebuchet ms;
-  font-size: 14pt;
-  line-height: 17pt;
+  background-color: #aaa; 
   font-weight: normal;
 }
 
@@ -61,7 +58,7 @@ nav ul li a {
 .medium {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #333;
+  background-color: #999;
 }
 
 .medium h1 {
@@ -81,13 +78,13 @@ footer {
 
 
     /* Default styles for larger screens */
-.hero h1 {
+.hero h1, .honey h1, .medium h1 {
   font-size: 3rem;
 }
 
 /* Styles for tablets and below */
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero h1, .honey h1, .medium h1 {
     font-size: 2rem;
   }
 
@@ -102,7 +99,7 @@ footer {
 
 /* Styles for small screens (mobile phones) */
 @media (max-width: 480px) {
-  .hero h1 {
+  .hero h1, .honey h1, .medium h1 {
     font-size: 1.5rem;
   }
 
