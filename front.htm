@@ -1,19 +1,153 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Falling Away From Me x Korn</title>
-</head>
+  <style>
+    /* Reset some default */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-<style>
-body {
-  background-color: #2b2b2b;
-  margin: 0;
-  padding: 0;
-  font-family: trebuchet ms;
-}
-</style>
+    body {
+      background: #f4f7f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    .hero {
+      background: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 3rem auto;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0077cc;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .hero button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: #005fa3;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .feature {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      flex: 1;
+      text-align: center;
+    }
+
+    .feature h3 {
+      margin-bottom: 1rem;
+      color: #0077cc;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
 <body>
-<center><img src="dc.png" style="max-width:100%"></center>
+
+<header>
+  <div class="logo">MyBrand</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to MyBrand</h1>
+  <p>Discover the best solutions to improve your workflow and productivity.</p>
+  <button>Get Started</button>
+</section>
+
+<section class="features" id="features">
+  <div class="feature">
+    <h3>Fast Performance</h3>
+    <p>Experience lightning fast speed with our optimized platform.</p>
+  </div>
+  <div class="feature">
+    <h3>Secure & Reliable</h3>
+    <p>Your data is safe with our industry-leading security measures.</p>
+  </div>
+  <div class="feature">
+    <h3>24/7 Support</h3>
+    <p>We’re here to help anytime, day or night, no matter where you are.</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Contact us: support@mybrand.com | © 2025 MyBrand</p>
+</footer>
+
 </body>
 </html>
