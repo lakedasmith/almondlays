@@ -107,28 +107,36 @@ footer {
   } 
  
   
- nav .nav-links {
-    display: none; /* Hide the links by default on small screens */
-    flex-direction: column; /* Stack the links vertically */
-    width: 100%; /* Make sure it spans the full width */
-    background-color: #333; /* Same background color as header */
-    position: absolute; /* Position the nav links absolutely */
-    top: 60px; /* Position the menu just below the header */
-    left: 0; /* Align it to the left side */
+  nav .nav-links {
+    display: none; /* hide by default */
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
   }
-
   nav .nav-links li {
     text-align: center;
     margin: 10px 0;
   }
 
-  nav .menu-toggle {
-    display: block; /* Show the hamburger menu button on small screens */
+   nav .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
   }
 
   nav .nav-links.active {
-    display: flex; /* Show the links when 'active' class is added */
+    display: flex;
   }
+
+  
 }
 
 /* Styles for small screens (mobile phones) */
@@ -144,17 +152,17 @@ footer {
 </style>
 <body>
   <header>
-  <nav id="mobile-nav" class="hidden">
-    <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">
-      &#9776; <!-- Hamburger icon -->
-    </button>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#honey">TV</a></li>
-      <li><a href="#medium">Music</a></li>
-      <li><a href="#life">Other</a></li>
-    </ul>
-  </nav>
+ <nav>
+  <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">
+    &#9776; <!-- Hamburger icon -->
+  </button>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#honey">TV</a></li>
+    <li><a href="#medium">Music</a></li>
+    <li><a href="#life">Other</a></li>
+  </ul>
+</nav>
 </header>
 
   <main>
@@ -200,19 +208,22 @@ footer {
 </body>
 
 
-   <script>const menuToggle = document.getElementById('menu-toggle');
-const mobileNav = document.getElementById('mobile-nav');
-const navLinks = document.querySelectorAll('.nav-links a');  // fixed selector
+   <script>
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links'); // just one element
 
+// Toggle nav-links visibility on menu button click
 menuToggle.addEventListener('click', () => {
-  mobileNav.classList.toggle('hidden');
+  navLinks.classList.toggle('active');
 });
 
-navLinks.forEach(link => {
+// Close nav-links menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    mobileNav.classList.add('hidden');
+    navLinks.classList.remove('active');
   });
 });
+
 
 </script>
 </html>
