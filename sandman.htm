@@ -1,206 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Falling Away From Me x Korn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falling Away From Me x Korn</title> 
+</head>
+
   <style>
     body {
-      margin: 0;
-      font-family: trebuchet ms;
-      font-size: 11pt;
+  margin: 0;
+  font-family: trebuchet ms;
+  font-size: 11pt;
       line-height: 14pt;
-    }
+}
 
-    header {
-      background-color: #333;
+header {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
   position: fixed;
+  z-index: 1000; /* make sure it's on top */
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 1000; /* make sure it's on top */
-    }
+}  
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
+nav .menu-toggle {
+  display: none; /* Hide hamburger menu by default */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+}
 
-    nav .menu-toggle {
-      display: none; /* hidden by default */
-      font-size: 2rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      position: absolute;
-      right: 1rem;
-      top: 1.5rem;
-    }
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
 
-    nav .nav-links {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
+nav .nav-links li {
+  margin: 0 15px;
+}
 
-    nav .nav-links li {
-      margin: 0 15px;
-    }
+nav .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
 
-    nav .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-    }
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f4f4f4;
+}
 
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-color: #f4f4f4;
-    }
+.hero h1, .honey h1, .medium h1, .life h1 {
+  font-size: 2.5rem;
+}
 
-    .hero h1,
-    .honey h1,
-    .medium h1,
-    .life h1 {
-      font-size: 2.5rem;
-    }
+.honey {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #aaa; 
+  font-weight: normal; 
+}
+ 
 
-    .honey {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-color: #aaa;
-      font-weight: normal;
-    }
+.medium {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #999;
+}   
 
-    .medium {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-color: #999;
-    }
+ .life {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #777;
+}
 
-    .life {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-color: #777;
-    }
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #000;
+  color: white;
+}
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #000;
-      color: white;
-    }
 
-    /* Responsive & Bootstrap */
+
+/*resposive & bootstrap*/
+
 
     /* Default styles for larger screens */
-    .hero h1,
-    .honey h1,
-    .medium h1,
-    .life h1 {
-      font-size: 3rem;
-    }
+.hero h1, .honey h1, .medium h1, .life h1 {
+  font-size: 3rem;
+}
 
-    /* Styles for tablets and below */
-    @media (max-width: 768px) {
-      .hero h1,
-      .honey h1,
-      .medium h1,
-      .life h1 {
-        font-size: 2rem;
-      }
+/* Styles for tablets and below */
+@media (max-width: 768px) {
+  .hero h1, .honey h1, .medium h1, .life h1 {
+    font-size: 2rem;
+  } 
+ 
+  
+  nav .nav-links {
+    display: none; /* hide by default */
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  nav .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
 
-      nav .nav-links {
-        display: none; /* hide nav links by default */
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        z-index: 1000; /* above other content */
-      }
+   nav .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+  }
 
-      nav .nav-links.active {
-        display: flex; /* show nav links when active */
-      }
+  nav .nav-links.active {
+    display: flex;
+  }
 
-      nav .nav-links li {
-        text-align: center;
-        margin: 10px 0;
-      }
+  
+}
 
-      nav .menu-toggle {
-        display: block; /* show hamburger */
-      }
-    }
+/* Styles for small screens (mobile phones) */
+@media (max-width: 480px) {
+  .hero h1, .honey h1, .medium h1, .life h1 {
+    font-size: 1.5rem;
+  }  
+  footer {
+    font-size: 0.8rem;
+  }
+}
 
-    /* Styles for small screens (mobile phones) */
-    @media (max-width: 480px) {
-      .hero h1,
-      .honey h1,
-      .medium h1,
-      .life h1 {
-        font-size: 1.5rem;
-      }
-      footer {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
-</head>
+</style>
 <body>
   <header>
-    <nav>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">
-        &#9776; <!-- Hamburger icon -->
-      </button>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#honey">TV</a></li>
-        <li><a href="#medium">Music</a></li>
-        <li><a href="#life">Other</a></li>
-      </ul>
-    </nav>
-  </header>
+ <nav>
+  <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">
+    &#9776; <!-- Hamburger icon -->
+  </button>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#honey">TV</a></li>
+    <li><a href="#medium">Music</a></li>
+    <li><a href="#life">Other</a></li>
+  </ul>
+</nav>
+</header>
 
   <main>
     <section class="hero" id="hero">
       <h1>Welcome!</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
+
+
 
     <section class="honey" id="honey">
       <h1>Here Honey Boo Boo!</h1>
       <p>The show from TLC. Featuring Alana Thompson. Kids on "crack" (Pixie sticks).</p>
     </section>
 
-    <section class="medium" id="medium">
+
+      <section class="medium" id="medium">
       <h1>Mama June: From Not to Hot</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br /><br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+      
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
 
+
     <section class="life" id="life">
-      <h1>My 600lb. Life</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br /><br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br /><br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    <h1>My 600lb. Life</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+      
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+      
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+      
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+
+
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 &copy; whatever else goes here | </p>
+  </footer>
+</body>
+
+
+   <script>
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links'); // just one element
+
+// Toggle nav-links visibility on menu button click
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Close nav-links menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+
+</script>
+</html>
