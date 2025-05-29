@@ -25,9 +25,8 @@ header {
   position: fixed;
 }  
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 400px;
+  margin: 0 auto; /* center horizontally */
 }
 
 nav .menu-toggle {
@@ -112,14 +111,13 @@ footer {
   } 
  
   
-  nav .nav-links {
-    display: none; /* hide by default */
-    flex-direction: column;
-    width: 100%;
+ nav .nav-links {
+    width: 250px;
     background-color: #333;
     position: absolute;
     top: 60px;
     left: 0;
+    display: none;
   }
   nav .nav-links li {
     text-align: center;
@@ -136,8 +134,7 @@ footer {
     position: absolute;
     right: 1rem;
   }
-
-  nav .nav-links.active {
+nav .nav-links.active {
     display: flex;
   }
 
