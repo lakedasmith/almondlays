@@ -13,10 +13,11 @@
     }
 
     header {
-      background-color: #333;
-      color: white;
-      padding: 2rem;
-      position: relative; /* for absolute positioning of menu toggle */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* make sure it's on top */
     }
 
     nav {
