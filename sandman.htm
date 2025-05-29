@@ -13,16 +13,17 @@
   font-size: 11pt;
       line-height: 14pt;
 }
-
 header {
-  background-color: #333;
-  color: white;
-  padding: 2rem;
   position: fixed;
-  z-index: 1000; /* make sure it's on top */
   top: 0;
   left: 0;
-}  
+  width: 100%;
+  z-index: 1000;
+}
+
+main {
+  padding-top: 140px; /* give enough space below fixed header */
+}
 nav {
   display: flex;
   justify-content: space-between;
