@@ -1,181 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Falling Away From Me x Korn</title>
-</head>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Break Stuff -|- Limp Bizkit</title>
   <style>
-body {
-  margin: 0;
-  background-color: #333;
-  font-family: Arial, sans-serif;
-}
+    body {
+      margin: 0;
+      font-family: trebuchet ms;
+      font-size: 11pt;
+      line-height: 14pt;
+    }
 
     header {
-  background-color: #333;
-  color: white;
-  padding: 2rem;
-}
+      background-color: #333;
+      color: white;
+      padding: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #444;
+    }
 
-.hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: #f4f4f4;
-}
+    nav {
+      display: flex;
+      justify-content: space-between; /* Center the nav-links container */
+      align-items: center; 
+    }
 
-.hero h1 {
-  font-size: 2.5rem;
-}
+    nav .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      right: 1rem; 
+    }
 
-nav {
-  display: flex;
-  justify-content: space-between;  /* This makes sure content is spaced between */
-  align-items: center;
-}
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0; 
+      width: 100%; 
+    }
 
-nav .menu-toggle {
-  display: none; /* Hide hamburger menu by default */
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  position: absolute; /* Absolutely position the hamburger icon */
-  right: 1rem; /* Position it 1rem from the right edge */
-}
+    nav .nav-links li {
+      margin: 0 15px;
+    }
 
-nav .nav-links {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
+    nav .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
 
-nav .nav-links li {
-  margin: 0 15px;
-}
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #f4f4f4;
+    }
 
-nav .nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-}
+    .hero h1,
+    .honey h1,
+    .medium h1,
+    .life h1 {
+      font-size: 2.5rem;
+    }
 
+    .honey {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #aaa;
+      font-weight: normal;
+    }
 
-  .honey {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: #aaa; 
-  font-weight: normal; 
-}
+    .medium {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #999;
+    }
 
-.honey h1 {
-  font-size: 2.5rem;
-}  
+    .life {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #777;
+    }
 
-.medium {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: #f4f4f4;
-}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000;
+      color: white;
+    }
 
-.medium h1 {
-  font-size: 2.5rem;
-}     
+    /* Responsive & Bootstrap */
 
-    
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333;
-  color: white;
-}
+    /* Default styles for larger screens */
+    .hero h1,
+    .honey h1,
+    .medium h1,
+    .life h1 {
+      font-size: 3rem;
+    }
 
-/* Media Queries */
-@media (max-width: 768px) {
+    /* Styles for tablets and below */
+    @media (max-width: 768px) {
+  .hero h1, .honey h1, .medium h1, .life h1 {
+    font-size: 2rem;
+  } 
+ 
+  
   nav .nav-links {
-    display: none; /* Hide the links by default on small screens */
-    flex-direction: column; /* Stack the links vertically */
-    width: 100%; /* Make sure it spans the full width */
-    background-color: #333; /* Same background color as header */
-    position: absolute; /* Position the nav links absolutely */
-    top: 60px; /* Position the menu just below the header */
-    left: 0; /* Align it to the left side */
+    display: none; /* hide by default */
+    flex-direction: column;
+    width: 100%; 
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
   }
-
   nav .nav-links li {
     text-align: center;
     margin: 10px 0;
   }
 
-  nav .menu-toggle {
-    display: block; /* Show the hamburger menu button on small screens */
+   nav .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
   }
 
   nav .nav-links.active {
-    display: flex; /* Show the links when 'active' class is added */
+    display: flex;
   }
+
+  
 }
 
-
-    
+    /* Styles for small screens (mobile phones) */
+    @media (max-width: 480px) {
+      .hero h1,
+      .honey h1,
+      .medium h1,
+      .life h1 {
+        font-size: 1.5rem;
+      }
+      footer {
+        font-size: 0.8rem;
+      }
+    }
   </style>
+</head>
 <body>
   <header>
     <nav>
-      <button class="menu-toggle" aria-label="Open navigation">&#9776;</button>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">
+        &#9776; <!-- Hamburger icon -->
+      </button>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
-        <li><a href="#honey">Honey Boo Boo</a></li>
-        <li><a href="#medium">Linkin Park</a></li>
-        <li><a href="#hero">Idk</a></li>
+        <li><a href="#honey">TV</a></li>
+        <li><a href="#medium">Music</a></li>
+        <li><a href="#life">Other</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="hero">
-      <h1>Welcome to Our Website</h1>
-      <p>Your solution to everything!</p>
+      <p><img src="dc.png" style="max-width:100%"></p>
     </section>
 
     <section class="honey" id="honey">
-      <h1>Points of Authority</h1>
-      <p>You love the things I say I'll do. The way I hurt myself again just to get back at you.</p>
+      <h1>Here Honey Boo Boo!</h1>
+      <p>The show from TLC. Featuring Alana Thompson. Kids on "crack" (Pixie sticks).</p>
     </section>
 
     <section class="medium" id="medium">
-      <h1>Crawling</h1>
+      <h1>Mama June: From Not to Hot</h1>
       <p>
-<ol>
-  <li>Papercut</li>
-  <li>One Step Closer</li>
-  <li>With You</li>
-  <li>Points of Authority</li>
-  <li>Crawling</li>
-  <li>Runaway</li>
-  <li>By Myself</li>
-  <li>In The End</li>
-  <li>Place for My Head</li>
-  <li>Forgotten</li>
-  <li>A Cure For the Itch</li>
-  <li>Pushing Me Away</li>
-</ol></p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </section>
+
+    <section class="life" id="life">
+      <h1>My 600lb. Life</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Company Name. All rights reserved.</p>
+    <p>&copy; 2025 &copy; whatever else goes here | </p>
   </footer>
 
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
     });
   </script>
 </body>
