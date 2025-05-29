@@ -107,7 +107,9 @@ footer {
   .hero h1, .honey h1, .medium h1, .life h1 {
     font-size: 2rem;
   }
-
+.hidden {
+  display: none;
+}
  nav .nav-links {
     display: none; /* Hide the links by default on small screens */
     flex-direction: column; /* Stack the links vertically */
@@ -137,7 +139,9 @@ footer {
   .hero h1, .honey h1, .medium h1, .life h1 {
     font-size: 1.5rem;
   }
-
+.hidden {
+  display: none;
+}
   footer {
     font-size: 0.8rem;
   }
@@ -146,7 +150,7 @@ footer {
 </style>
 <body>
   <header>
-  <nav>
+  <nav id="mobile-nav" class="hidden">
     <button class="menu-toggle" aria-label="Open navigation">
       &#9776; <!-- Hamburger icon -->
     </button>
@@ -203,11 +207,22 @@ footer {
 
 
     <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.getElementById('menu-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const navLinks = document.querySelectorAll('.nav-link');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+// Toggle menu open/close on button click
+menuToggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('hidden');
+});
+
+// Close menu when any nav link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.add('hidden');
+  });
+});
+
   });
 </script>
 </html>
